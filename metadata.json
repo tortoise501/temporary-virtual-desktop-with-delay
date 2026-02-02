@@ -1,7 +1,7 @@
 {
     "KPlugin": {
-        "Name": "Temporary Virtual Desktops",
-        "Description": "Automatically purges empty virtual desktops",
+        "Name": "Temporary Virtual Desktops With Delay",
+        "Description": "Automatically adds and removes virtual desktops, now with delay",
         "Icon": "preferences-desktop-virtual",
 
         "Authors": [
@@ -10,9 +10,12 @@
             },
             {
                 "Name": "wsdfhjxc"
+            },
+            {
+                "Name": "tortoise501"
             }
         ],
-        "Id": "temporary-virtual-desktops",
+        "Id": "temporary-virtual-desktops-with-delay",
         "Version": "0.4.0",
         "License": "GPLv3",
         "EnabledByDefault": false

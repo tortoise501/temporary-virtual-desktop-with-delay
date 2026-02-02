@@ -2,6 +2,7 @@ var busy = false;
 var oneSpare = readConfig("oneSpare", false);
 var backHome = readConfig("backHome", false);
 var keepFirst = readConfig("keepFirst", false);
+var deleteWindowDelay = readConfig("deleteWindowDelay", 0);
 
 function isDesktopEmpty(desktop) {
     if (keepFirst) {
@@ -38,7 +39,13 @@ function deleteDesktop(desktop) {
     if (workspace.currentDesktop == desktop && backHome){
         workspace.currentDesktop = workspace.desktops[0];
     }
-    workspace.removeDesktop(desktop);
+    var deleteTimer = new QTimer();
+    deleteTimer.singleShot = true;
+    deleteTimer.interval = readConfig("deleteWindowDelay", 0);
+    deleteTimer.timeout.connect(function () {
+        workspace.removeDesktop(desktop);
+    });
+    deleteTimer.start();
 }
 
 function renameDesktops() {
@@ -113,4 +120,3 @@ function main() {
 }
 
 main();
-
