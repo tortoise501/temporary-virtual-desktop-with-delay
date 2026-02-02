@@ -16,7 +16,7 @@
             }
         ],
         "Id": "temporary-virtual-desktops-with-delay",
-        "Version": "0.4.0",
+        "Version": "0.1.0",
         "License": "GPLv3",
         "EnabledByDefault": false
     },
